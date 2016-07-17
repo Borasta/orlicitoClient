@@ -1,0 +1,29 @@
+<div class="container">
+    <h1>Subamos un archivo</h1>
+    <h2>{{archivo.name}}</h2>
+
+    <form name="uploadForm">
+        <div class="row">
+            <div input-field class="col s8">
+                <input id="title" name="title" type="text" ng-class="{valid : upload.title, invalid : !login.title}" ng-model="login.title">
+                <label for="title">Write your title</label>
+            </div>
+        </div>
+        <div class="row">
+            <div input-field class="col s8">
+                <input id="description" name="description" type="text" ng-class="{valid : login.description, invalid : !login.description}" ng-model="login.description">
+                <label for="description">Write your description</label>
+            </div>
+        </div>
+        <div class="row">
+            <div input-field class="col s8">
+                <input id="tags" name="tags" type="text" ng-class="{valid : login.tags, invalid : !login.tags}" ng-model="login.tags">
+                <label for="tags">Write your tags</label>
+            </div>
+            <div class="col s4">
+                <a class="btn-floating btn-large waves-effect waves-light red" ng-click="uploadFunc()"><i class="material-icons">input</i></a>
+            </div>
+        </div>
+    </form>
+    
+</div>

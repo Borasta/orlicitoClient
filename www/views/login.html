@@ -1,0 +1,97 @@
+<div class="container">
+	<div class="row">
+		<div class="col l8 m12 s12 center-align">
+			<div class="row">
+				<h2>Orlicito</h2>
+			</div>
+			<div class="row">
+				<img class="" src="img/logo.jpg" width="50%" alt="Anonymous">
+			</div>
+			<div class="row">
+				<h2>Social Network</h2>
+			</div>
+		</div>
+		<div class="col l4 m12 s12 center-align">
+			<div class="row">
+				<div class="col s12 center-align">
+					<div class="card">
+						<div class="card-title">
+							Login
+						</div>
+						<div class="card-content">
+							<form name="loginForm">
+								<div class="row">
+									<div input-field class="col s8">
+										<input id="username" name="username" type="text" ng-class="{valid : login.username, invalid : !login.username}" ng-model="login.username">
+										<label for="username">Write your username</label>
+									</div>
+								</div>
+								<div class="row">
+									<div input-field class="col s8">
+										<input id="password" name="password" type="password" ng-class="{valid : login.password, invalid : !login.password}" ng-model="login.password">
+										<label for="password">Write your password</label>
+									</div>
+									<div class="col s4">
+										<a class="btn-floating btn-large waves-effect waves-light red" ng-click="loginFunc()"><i class="material-icons">input</i></a>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col s12 center-align">
+					<div class="card">
+						<div class="card-title">
+							Sign up
+						</div>
+						<div class="card-content">
+							<form name="signupForm">
+								<div class="row">
+									<div input-field class="col s8">
+										<input id="name" name="name" type="text" ng-class="{valid : signup.name, invalid : signupForm.name.$dirty && !signup.name, '' : !signupForm.name.$dirty}" ng-model="signup.name">
+										<label for="name">Write your name</label>
+									</div>
+								</div>
+								<div class="row">
+									<div input-field class="col s8">
+										<input id="lastname" name="lastname" type="text" ng-class="{valid : signup.lastname, invalid : signupForm.lastname.$dirty && !signup.lastname, '' : !signupForm.lastname.$dirty}" ng-model="signup.lastname">
+										<label for="lastname">Write your lastname</label>
+									</div>
+								</div>
+								<div class="row">
+									<div input-field class="col s8">
+										<input id="email" name="email" type="email" ng-class="{valid : signup.email, invalid : signupForm.email.$dirty && !signup.email, '' : !signupForm.email.$dirty}" ng-model="signup.email">
+										<label for="email">Write your email</label>
+									</div>
+								</div>
+								<div class="row">
+									<div input-field class="col s8">
+										<input id="username1" name="username1" type="text" ng-class="{valid : signup.username1, invalid : signupForm.username1.$dirty && !signup.username1, '' : !signupForm.username1.$dirty}" ng-model="signup.username1">
+										<label for="username1">Write your username</label>
+									</div>
+								</div>
+								<div class="row">
+									<div input-field class="col s8">
+										<input id="password1" name="password1" type="text" ng-class="{valid : signup.password1 && signup.password1, invalid : signupForm.password1.$dirty && !signup.password1, '' : !signupForm.password1.$dirty}" ng-model="signup.password1">
+										<label for="password1">Write your Password</label>
+									</div>
+								</div>
+								<div class="row">
+									<div input-field class="col s8">
+										<input id="password2" name="password2" type="text" ng-class="{valid : (signup.password1 == signup.password2) && signupForm.password2.$dirty && signup.password2 , invalid : (signup.password1 != signup.password2) && signupForm.password2.$dirty, '' : !signupForm.password2.$dirty}" ng-model="signup.password2">
+										<label for="password2">Write your Password again</label>
+									</div>
+									<div class="col s4">
+										<a class="btn-floating btn-large waves-effect waves-light red" ng-click="signupFunc()"><i class="material-icons">input</i></a>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

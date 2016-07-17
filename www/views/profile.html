@@ -1,0 +1,49 @@
+<div class="container">
+    <div class="row">
+        <div class="col s12">
+            <div class="row">
+                <h1 class="col s12">{{user.name + " " + user.lastname}}</h1>
+            </div>
+            <div class="row">
+                <h1 class="col s12">Otra cosa</h1>
+            </div>
+        </div>
+    </div>
+    <div class="row" ng-repeat="post in posts">
+        <div class="card">
+            <div class="card-image waves-effect waves-block waves-light" ng-click="setSrc(post)">
+                <div ng-if="post.media_type == 'image'">
+                    <img class="activator" ng-src="http://orlicito.herokuapp.com/media/{{post.username}}/{{post.media}}.png">
+                </div>
+                <div ng-if="post.media_type == 'audio'">
+                    <div class="activator col s12" audios code="post.username + '/' + post.media + '.mp3'" play="post.play"></div>
+                    {{post.progress}}
+                </div>
+                <div ng-if="post.media_type == 'video'">
+                    <div class="activator col s12" videos code="post.username + '/' + post.media + '.mp4'" play="post.play"></div>
+                </div>
+            </div>
+            <div class="card-content">
+                <span class="card-title activator grey-text text-darken-4">{{post.title}}<i class="material-icons right">help</i></span>
+                <p><a ui-sref="home.profile({username: post.username})">{{post.username}}</a></p>
+            </div>
+            <div class="card-action">
+                <a href="javascript:void(0);" ng-click="like(post)">
+                    <i ng-if="post.liked" class="material-icons">favorite</i>
+                    <i ng-if="!post.liked" class="material-icons">favorite_border</i>
+                </a>
+                <a href="javascript:void(0);" ng-click="comment(post)"><i class="material-icons">chat</i></a>
+                <a href="https://maps.googleapis.com/maps/api/staticmap?center={{post.location}}&zoom=14&size=400x600&markers=color:red%7Clabel:P%7C{{post.location}}&key=AIzaSyDjQlu5poDgyU0Al3ngLj2YzZm6DbKrqM0"><i class="material-icons">location_on</i></a>
+                <a href="javascript:void(0);" ng-if="post.media_type != 'image'" class="" ng-click="post.play=!post.play">
+                    <i ng-if="!post.play" class="material-icons">play_circle_filled</i>
+                    <i ng-if="post.play" class="material-icons">stop_circle_filled</i>
+                </a>
+                <span class="right">{{post.date_time | date: 'short'}}</span>
+            </div>
+            <div class="card-reveal">
+                <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
+                <p>{{post.description}}</p>
+            </div>
+        </div>
+    </div>
+</div>
