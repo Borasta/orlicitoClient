@@ -1,0 +1,23 @@
+{
+  "name": "orlygram",
+  "version": "1.0.0",
+  "description": "\"# orlicitoServer\"",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Borasta/orlicitoClient.git"
+  },
+  "author": "Orlando Bohorquez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Borasta/orlicitoClient/issues"
+  },
+  "homepage": "https://github.com/Borasta/orlicitoClient#readme",
+  "dependencies": {
+    "express": "^4.14.0"
+  }
+}
