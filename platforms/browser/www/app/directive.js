@@ -36,7 +36,7 @@ app.directive('audios', function($sce) {
                 var audio = element[0];
                 play = newVal;
                 if(!scope.url && play)
-                    scope.url = $sce.trustAsResourceUrl("http://192.168.1.2:5000/media/" + src);
+                    scope.url = $sce.trustAsResourceUrl("http://orlicito.herokuapp.com/media/" + src);
                 if (play !== undefined) {
                     if(play)
                         audio.play();
@@ -71,7 +71,7 @@ app.directive('videos', function($sce) {
                 var video = element[0];
                 play = newVal;
                 if(!scope.url && play)
-                    scope.url = $sce.trustAsResourceUrl("http://192.168.1.2:5000/media/" + src);
+                    scope.url = $sce.trustAsResourceUrl("http://orlicito.herokuapp.com/media/" + src);
                 if (play !== undefined) {
                     if(play)
                         video.play();

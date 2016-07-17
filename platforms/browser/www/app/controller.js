@@ -1,4 +1,4 @@
-var baseUrl = "192.168.1.2";
+var baseUrl = "orlicito.herokuapp.com";
 
 app.controller("LoginCtrl", ["$scope", "$http", "$state", "userLogin",
     function ($scope, $http, $state, userLogin ) {
@@ -26,7 +26,7 @@ app.controller("LoginCtrl", ["$scope", "$http", "$state", "userLogin",
             console.log("login");
             $http({
                 "method": "POST",
-                "url": "http://" + baseUrl + ":5000/login",
+                "url": "http://" + baseUrl + "/login",
                 "data": $scope.login
             }).then(
                 function(res) {
@@ -44,7 +44,7 @@ app.controller("LoginCtrl", ["$scope", "$http", "$state", "userLogin",
             console.log("signup");
             $http({
                 "method": "POST",
-                "url": "http://" + baseUrl + ":5000/signup",
+                "url": "http://" + baseUrl + "/signup",
                 "data": $scope.signup
             }).then(
                 function(res) {
@@ -66,7 +66,7 @@ app.controller("HomeCtrl", ["$scope", "$http", "$state", "userLogin", "media",
 
         $scope.user = userLogin.getSession();
 
-        var socket = io("http://" + baseUrl + ":5000");
+        var socket = io("http://" + baseUrl);
         socket.on($scope.user.username, function (data) {
             switch( data.type ) {
                 case "like":
@@ -86,7 +86,7 @@ app.controller("HomeCtrl", ["$scope", "$http", "$state", "userLogin", "media",
         $scope.func = function() {
             $http({
                 "method": "GET",
-                "url": "http://" + baseUrl + ":5000/like"
+                "url": "http://" + baseUrl + "/like"
             }).then(
                 function(res) {
                     console.log(res);
@@ -101,7 +101,7 @@ app.controller("HomeCtrl", ["$scope", "$http", "$state", "userLogin", "media",
             console.log(post);
             $http({
                 "method": "POST",
-                "url": "http://" + baseUrl + ":5000/like",
+                "url": "http://" + baseUrl + "/like",
                 "data": {
                     "id_publish": post.id_publish,
                     "liked": post.liked ? 0 : 1
@@ -139,7 +139,7 @@ app.controller("HomeCtrl", ["$scope", "$http", "$state", "userLogin", "media",
         $scope.a = function(){
             $http({
                 "method": "POST",
-                "url": "http://" + baseUrl + ":5000/comment",
+                "url": "http://" + baseUrl + "/comment",
                 "data": {
                     id_publish: 1,
                     comment: "Hola mundo, gran diagrama"
@@ -188,7 +188,7 @@ app.controller("ProfileCtrl", ["$scope", "$http", "$stateParams", "userLogin",
 
         $http({
             "method": "GET",
-            "url": "http://" + baseUrl + ":5000/publish",
+            "url": "http://" + baseUrl + "/publish",
             "params": {
                 "username": $stateParams.username
             }

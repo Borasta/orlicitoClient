@@ -13,7 +13,7 @@
         <div class="card">
             <div class="card-image waves-effect waves-block waves-light" ng-click="setSrc(post)">
                 <div ng-if="post.media_type == 'image'">
-                    <img class="activator" ng-src="http://192.168.1.2:5000/media/{{post.username}}/{{post.media}}.png">
+                    <img class="activator" ng-src="http://orlicito.herokuapp.com/media/{{post.username}}/{{post.media}}.png">
                 </div>
                 <div ng-if="post.media_type == 'audio'">
                     <div class="activator col s12" audios code="post.username + '/' + post.media + '.mp3'" play="post.play"></div>
@@ -36,7 +36,7 @@
                 <a href="https://maps.googleapis.com/maps/api/staticmap?center={{post.location}}&zoom=14&size=400x600&markers=color:red%7Clabel:P%7C{{post.location}}&key=AIzaSyDjQlu5poDgyU0Al3ngLj2YzZm6DbKrqM0"><i class="material-icons">location_on</i></a>
                 <a href="javascript:void(0);" ng-if="post.media_type != 'image'" class="" ng-click="post.play=!post.play">
                     <i ng-if="!post.play" class="material-icons">play_circle_filled</i>
-                    <i ng-if="post.play" class="material-icons">stop</i>
+                    <i ng-if="post.play" class="material-icons">stop_circle_filled</i>
                 </a>
                 <span class="right">{{post.date_time | date: 'short'}}</span>
             </div>
