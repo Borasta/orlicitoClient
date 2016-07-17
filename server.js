@@ -4,6 +4,6 @@ var app = express();
 
 app.use(express.static(__dirname + "/www/"));
 
-app.listen(7000, function () {
+app.listen(process.env.PORT || 5000, function () {
     console.log("Server iniciado")
 });
